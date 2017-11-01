@@ -26,29 +26,27 @@ for(let i=0;i< 16;i++){
 
 }
 
-console.log(timeLine)
-
-
 var currentStep = 1;
 var currentSpeed = 200
 
 var playButton = document.getElementById('playButton')
 playButton.addEventListener('click', start)
 
+var stopButton = document.getElementById('stopButton')
+stopButton.addEventListener('click', stop)
+
 function start(){
 	setInterval(() => {
-		timeLine[currentStep - 1].style.border = '1px solid blue'
-		currentStep += 1;
-		currentKiq = 0;
-		
-		
+			timeLine[currentStep - 1].style.border = '1px solid blue'
+		currentStep += 1;	
 		if(currentStep > 16){
 			currentStep = 1;
 		}
-		
+	},currentSpeed)
+}
 
-	},currentSpeed )
-
+function stop(){
+	clearInterval()
 }
 
 
